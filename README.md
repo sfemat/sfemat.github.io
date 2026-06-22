@@ -16,27 +16,30 @@ The repo root should be served as a static site. On GitHub Pages:
 1. Settings → Pages → Source: `main` branch, `/ (root)`
 2. Site will be live at `https://<username>.github.io/posturemaxxweb/`
 
-## Wiring up Beehiiv (newsletter)
+## Wiring up the newsletter (Brevo / Sendinblue)
 
-The signup form is already wired up to Beehiiv using the embed Beehiiv provided.
-
-In `index.html`, the loader script is in `<head>`:
+The signup form uses Brevo's JS embed. In `index.html`, the loader script is in `<head>`:
 
 ```html
-<script
-  async
-  src="https://subscribe-forms.beehiiv.com/v3/loader.js"
-  data-beehiiv-form="4411378e-d52b-4a37-9cf7-594444b9819d"
-></script>
+<script>
+  (function () {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'https://bdb5b4a4.sibforms.com/v2/sibforms.js';
+    document.head.appendChild(s);
+  })();
+</script>
 ```
 
-And the form renders inside an `<iframe>` in the signup section.
+The form markup (email field + Subscribe button) lives in the signup section and POSTs to Brevo's subscribe endpoint.
 
-If you ever need to swap the form (different publication, different list):
+If you ever need to swap forms (different list, different workspace):
 
-1. In Beehiiv, create a new **Embed** form.
-2. Replace the `src` of the `<script>` in `<head>` and the `src` of the `<iframe>` in the signup section with the new values Beehiiv gives you.
-3. Commit and push.
+1. In Brevo, create a new form.
+2. Update the `s.src` URL in the loader script to your new form's `sibforms.com` subdomain.
+3. Update the form `action` URL in the `<form>` tag to match.
+4. Commit and push.
 
 ## Customizing
 

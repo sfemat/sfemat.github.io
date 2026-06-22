@@ -45,12 +45,18 @@
             href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2300d4a8'/><path d='M20 44c0-8 4-14 12-14s12 6 12 14' stroke='%230b0f17' stroke-width='4' fill='none' stroke-linecap='round'/><circle cx='32' cy='22' r='6' fill='%230b0f17'/></svg>"
         />
 
-        <!-- Beehiiv embed (provided by Beehiiv). Loader finds the form via data-beehiiv-form. -->
-        <script
-            async
-            src="https://subscribe-forms.beehiiv.com/v3/loader.js"
-            data-beehiiv-form="4411378e-d52b-4a37-9cf7-594444b9819d"
-        ></script>
+        <!-- Brevo (Sendinblue) embed loader. The actual form fields are
+             configured in the Brevo dashboard and render into the
+             .sib-form container in the signup section. -->
+        <script>
+            (function () {
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://bdb5b4a4.sibforms.com/v2/sibforms.js";
+                document.head.appendChild(s);
+            })();
+        </script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -112,11 +118,77 @@
                         transparent 60%
                     );
             }
-            /* Give the Beehiiv iframe room and make it stretch full width. */
-            .beehiiv-embed {
+            /* Style the Brevo form to match the rest of the page. */
+            .sib-form {
+                background: transparent;
+            }
+            .sib-form-block {
+                padding: 0;
+            }
+            .sib-form .entry__label {
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: #e2e8f0;
+                margin-bottom: 0.5rem;
+            }
+            .sib-form input[type="email"],
+            .sib-form input[type="text"],
+            .sib-form input[type="tel"] {
                 width: 100%;
-                min-height: 184px;
+                border-radius: 9999px;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                background: #0b0f17;
+                padding: 0.75rem 1.25rem;
+                font-size: 0.875rem;
+                color: #fff;
+                outline: none;
+                transition:
+                    border-color 0.15s,
+                    box-shadow 0.15s;
+            }
+            .sib-form input::placeholder {
+                color: #64748b;
+            }
+            .sib-form input:focus {
+                border-color: #1ecc9a;
+                box-shadow: 0 0 0 2px rgba(0, 212, 168, 0.3);
+            }
+            .sib-form .sib-form-block + .sib-form-block {
+                margin-top: 0.75rem;
+            }
+            .sib-form .sib-input,
+            .sib-form .sib-form-block__button {
+                display: block;
+            }
+            .sib-form .sib-form-block__button {
+                margin-top: 0.75rem;
+            }
+            .sib-form .sib-form-block__button .sib-btn {
+                width: 100%;
+                border-radius: 9999px;
+                background: #00d4a8;
+                color: #0b0f17;
+                font-weight: 600;
+                font-size: 0.875rem;
+                padding: 0.75rem 1.5rem;
                 border: 0;
+                cursor: pointer;
+                transition: background 0.15s;
+            }
+            .sib-form .sib-form-block__button .sib-btn:hover {
+                background: #1ecc9a;
+            }
+            .sib-form .sib-form-message-panel {
+                margin-top: 0.75rem;
+                font-size: 0.875rem;
+                min-height: 1.25rem;
+            }
+            .sib-form .sib-form-message-panel--success {
+                color: #4fe0b7;
+            }
+            .sib-form .sib-form-message-panel--error {
+                color: #fb7185;
             }
         </style>
     </head>
@@ -633,22 +705,112 @@
                         </ul>
                     </div>
 
-                    <!-- Beehiiv embed: the loader script in <head> injects the form here. -->
+                    <!-- Brevo form container. The loader script in <head>
+                         injects the configured form fields here. -->
                     <div class="w-full">
-                        <iframe
-                            src="https://subscribe-forms.beehiiv.com/v3/4411378e-d52b-4a37-9cf7-594444b9819d"
-                            class="beehiiv-embed w-full"
-                            data-test-id="beehiiv-embed"
-                            height="184"
-                            frameborder="0"
-                            scrolling="no"
+                        <div
+                            class="sib-form"
                             style="
-                                background: transparent;
-                                width: 100%;
-                                border: 0;
+                                text-align: center;
+                                background-color: transparent;
                             "
-                        ></iframe>
-                        <p class="mt-3 text-xs text-slate-400">
+                        >
+                            <div
+                                id="sib-form-container"
+                                class="sib-form-container"
+                            >
+                                <div
+                                    id="sib-container"
+                                    class="sib-container--large sib-container--vertical"
+                                    style="
+                                        text-align: center;
+                                        background-color: transparent;
+                                        max-width: 540px;
+                                        margin: 0 auto;
+                                    "
+                                >
+                                    <form
+                                        id="sib-form"
+                                        method="POST"
+                                        action="https://bdb5b4a4.sibforms.com/v2/subscribe"
+                                        target="_blank"
+                                    >
+                                        <div style="padding: 8px 0">
+                                            <div
+                                                class="sib-input sib-form-block"
+                                            >
+                                                <div
+                                                    class="form__entry entry_block"
+                                                >
+                                                    <div
+                                                        class="form__label-row"
+                                                    >
+                                                        <label
+                                                            class="entry__label"
+                                                            for="EMAIL"
+                                                            >Email
+                                                            address</label
+                                                        >
+                                                    </div>
+                                                    <div
+                                                        class="form__input-row"
+                                                    >
+                                                        <input
+                                                            type="email"
+                                                            id="EMAIL"
+                                                            name="EMAIL"
+                                                            autocomplete="email"
+                                                            placeholder="you@domain.com"
+                                                            required
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 8px 0">
+                                            <div
+                                                class="sib-form-block"
+                                                style="text-align: center"
+                                            >
+                                                <button
+                                                    class="sib-btn"
+                                                    type="submit"
+                                                >
+                                                    Subscribe
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="email_address_check"
+                                            value=""
+                                            class="input--hidden"
+                                        />
+                                        <input
+                                            type="hidden"
+                                            name="locale"
+                                            value="en"
+                                        />
+                                    </form>
+                                </div>
+                                <div
+                                    class="sib-form-message-panel"
+                                    id="error-message"
+                                    style="display: none"
+                                ></div>
+                                <div
+                                    class="sib-form-message-panel sib-form-message-panel--success"
+                                    id="success-message"
+                                    style="display: none"
+                                >
+                                    <p>
+                                        Thanks! Check your inbox to confirm your
+                                        subscription.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-xs text-slate-400 text-center">
                             We'll email you when TestFlight access is available.
                             No spam, ever.
                         </p>
