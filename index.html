@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PostureMaxx — Posture monitoring with your AirPods</title>
+        <title>PostureMaxx - Posture monitoring with your AirPods</title>
         <meta
             name="description"
             content="PostureMaxx uses your AirPods' motion sensors to monitor and correct your posture in real time. Join the TestFlight beta."
@@ -15,7 +15,7 @@
         <meta property="og:site_name" content="PostureMaxx" />
         <meta
             property="og:title"
-            content="PostureMaxx — Posture monitoring with your AirPods"
+            content="PostureMaxx - Posture monitoring with your AirPods"
         />
         <meta
             property="og:description"
@@ -27,12 +27,12 @@
         <meta property="og:image:height" content="630" />
         <meta
             property="og:image:alt"
-            content="PostureMaxx — Better posture, powered by your AirPods"
+            content="PostureMaxx - Better posture, powered by your AirPods"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
             name="twitter:title"
-            content="PostureMaxx — Posture monitoring with your AirPods"
+            content="PostureMaxx - Posture monitoring with your AirPods"
         />
         <meta
             name="twitter:description"
@@ -169,7 +169,7 @@
 
             /* Dark-theme overrides so the form lives nicely inside our card.
                Brevo styles the input's WRAPPER (.entry__field), not the
-               <input> itself — the input is intentionally transparent. */
+               <input> itself - the input is intentionally transparent. */
             #sib-container {
                 border-color: rgba(255, 255, 255, 0.1) !important;
                 background-color: transparent !important;
@@ -294,7 +294,7 @@
                     <p class="mt-5 max-w-lg text-lg text-slate-300">
                         PostureMaxx turns your AirPods into a discreet posture
                         coach. Using their built-in motion sensors, we gently
-                        remind you the moment you slouch — so you fix it, not
+                        remind you the moment you slouch. So you fix it, not
                         feel it later.
                     </p>
                     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -316,121 +316,198 @@
                     </p>
                 </div>
 
-                <!-- Phone mock -->
-                <div class="relative mx-auto w-full max-w-sm">
+                <!-- Signup form (above the fold) -->
+                <div class="w-full">
                     <div
-                        class="absolute -inset-6 rounded-[2.5rem] bg-brand-500/20 blur-3xl"
-                    ></div>
-                    <div
-                        class="relative rounded-[2.5rem] border border-white/10 bg-ink-800 p-3 shadow-2xl"
+                        class="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-ink-800 to-ink-900 p-8 md:p-12"
                     >
+                        <h2
+                            class="text-3xl font-bold tracking-tight text-white md:text-4xl"
+                        >
+                            Get on the TestFlight list
+                        </h2>
+                        <p class="mt-3 text-slate-300">
+                            Drop your email and we'll send your invite as soon
+                            as a TestFlight slot opens.
+                        </p>
                         <div
-                            class="rounded-[2rem] bg-gradient-to-b from-ink-700 to-ink-800 p-6"
+                            class="sib-form"
+                            style="
+                                text-align: left;
+                                background-color: transparent;
+                                margin-top: 1rem;
+                            "
                         >
                             <div
-                                class="flex items-center justify-between text-xs text-slate-400"
+                                id="sib-form-container"
+                                class="sib-form-container"
                             >
-                                <span>9:41</span>
-                                <span>PostureMaxx</span>
-                            </div>
-                            <div class="mt-6 grid place-items-center">
-                                <div class="relative h-44 w-44">
-                                    <svg
-                                        viewBox="0 0 200 200"
-                                        class="h-full w-full"
-                                    >
-                                        <defs>
-                                            <linearGradient
-                                                id="g"
-                                                x1="0"
-                                                y1="0"
-                                                x2="1"
-                                                y2="1"
-                                            >
-                                                <stop
-                                                    offset="0%"
-                                                    stop-color="#1ecc9a"
-                                                />
-                                                <stop
-                                                    offset="100%"
-                                                    stop-color="#00d4a8"
-                                                />
-                                            </linearGradient>
-                                        </defs>
-                                        <circle
-                                            cx="100"
-                                            cy="100"
-                                            r="86"
-                                            stroke="rgba(255,255,255,0.08)"
-                                            stroke-width="12"
-                                            fill="none"
-                                        />
-                                        <circle
-                                            cx="100"
-                                            cy="100"
-                                            r="86"
-                                            stroke="url(#g)"
-                                            stroke-width="12"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-dasharray="540"
-                                            stroke-dashoffset="60"
-                                            transform="rotate(-90 100 100)"
-                                        />
-                                    </svg>
+                                <div
+                                    id="error-message"
+                                    class="sib-form-message-panel"
+                                    style="
+                                        font-family: Helvetica, sans-serif;
+                                        font-size: 14px;
+                                        text-align: left;
+                                        color: #661d1d;
+                                        background-color: #ffeded;
+                                        border-color: #ff4949;
+                                        border-radius: 3px;
+                                        max-width: 100%;
+                                        margin-top: 0.75rem;
+                                    "
+                                >
                                     <div
-                                        class="absolute inset-0 grid place-items-center text-center"
+                                        class="sib-form-message-panel__text sib-form-message-panel__text--center"
                                     >
-                                        <div>
-                                            <div
-                                                class="text-5xl font-extrabold text-white"
-                                            >
-                                                92
-                                            </div>
-                                            <div
-                                                class="text-xs uppercase tracking-wider text-slate-400"
-                                            >
-                                                Posture score
-                                            </div>
-                                        </div>
+                                        <span
+                                            class="sib-form-message-panel__inner-text"
+                                        >
+                                            Your subscription could not be
+                                            saved. Please try again.
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="mt-6 space-y-3">
+                                <div></div>
                                 <div
-                                    class="flex items-center justify-between rounded-2xl bg-white/5 p-4"
+                                    id="success-message"
+                                    class="sib-form-message-panel"
+                                    style="
+                                        font-family: Helvetica, sans-serif;
+                                        font-size: 14px;
+                                        text-align: left;
+                                        color: #085229;
+                                        background-color: #e7faf0;
+                                        border-color: #13ce66;
+                                        border-radius: 3px;
+                                        max-width: 100%;
+                                        margin-top: 0.75rem;
+                                    "
                                 >
-                                    <div>
-                                        <div class="text-sm font-semibold">
-                                            Upright
-                                        </div>
-                                        <div class="text-xs text-slate-400">
-                                            Last 10 minutes
-                                        </div>
-                                    </div>
-                                    <span
-                                        class="rounded-full bg-brand-500/15 px-2.5 py-1 text-xs font-semibold text-brand-300"
-                                        >Good</span
+                                    <div
+                                        class="sib-form-message-panel__text sib-form-message-panel__text--center"
                                     >
+                                        <span
+                                            class="sib-form-message-panel__inner-text"
+                                        >
+                                            You're on the list. We'll email you
+                                            when your TestFlight invite is
+                                            ready.
+                                        </span>
+                                    </div>
                                 </div>
+                                <div></div>
                                 <div
-                                    class="flex items-center justify-between rounded-2xl bg-white/5 p-4"
+                                    id="sib-container"
+                                    class="sib-container--large sib-container--vertical"
+                                    style="
+                                        max-width: 100%;
+                                        text-align: left;
+                                        background-color: transparent;
+                                        border-width: 1px;
+                                        border-style: solid;
+                                        border-color: rgba(255, 255, 255, 0.1);
+                                        border-radius: 12px;
+                                        padding: 16px;
+                                        direction: ltr;
+                                    "
                                 >
-                                    <div>
-                                        <div class="text-sm font-semibold">
-                                            Streak
-                                        </div>
-                                        <div class="text-xs text-slate-400">
-                                            Days with ≥ 4h tracking
-                                        </div>
-                                    </div>
-                                    <span
-                                        class="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white"
-                                        >7</span
+                                    <form
+                                        id="sib-form"
+                                        method="POST"
+                                        action="https://bdb5b4a4.sibforms.com/serve/MUIFAH9pN8ccmxoFXnMaeU1HgL_d32b27uP2QgLhSLHeAAZGN2qzFM6ew7fs1h7ex8P6vdohPJA69tGv-yDvZWRboV50iFqzImxhJ8RXEIGzWFqSOSEs7HM_ga9rM4IP4PbTdQTOVZ9nswxgir8bIAXx11716MCiPqKbWdknQhALfKxGjc_1ShHVj8JPxjz9AjUICzcwBLbOxvgu"
+                                        data-type="subscription"
                                     >
+                                        <div class="sib-input sib-form-block" style="padding: 8px 0;">
+                                            <div
+                                                class="form__entry entry_block"
+                                            >
+                                                <div class="form__label-row">
+                                                    <label
+                                                        class="entry__label"
+                                                        style="
+                                                            font-weight: 700;
+                                                            text-align: left;
+                                                            font-family:
+                                                                Helvetica,
+                                                                sans-serif;
+                                                            font-size: 14px;
+                                                            color: #e2e8f0;
+                                                        "
+                                                        for="EMAIL"
+                                                        data-required="*"
+                                                        >Email address</label
+                                                    >
+                                                    <div class="entry__field">
+                                                        <input
+                                                            class="input"
+                                                            type="text"
+                                                            id="EMAIL"
+                                                            name="EMAIL"
+                                                            autocomplete="off"
+                                                            value=""
+                                                            placeholder="you@domain.com"
+                                                            data-required="true"
+                                                            required
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <label
+                                                    class="entry__error entry__error--primary"
+                                                    style="
+                                                        font-family:
+                                                            Helvetica,
+                                                            sans-serif;
+                                                        font-size: 14px;
+                                                        text-align: left;
+                                                        color: #661d1d;
+                                                        background-color: #ffeded;
+                                                        border-color: #ff4949;
+                                                        border-radius: 3px;
+                                                    "
+                                                ></label>
+                                            </div>
+                                        </div>
+                                        <div class="sib-form-block" style="text-align: left;">
+                                            <button
+                                                class="sib-form-block__button sib-form-block__button-with-loader"
+                                                style="
+                                                    font-family:
+                                                        Helvetica, sans-serif;
+                                                    font-size: 14px;
+                                                    font-weight: 700;
+                                                    text-align: left;
+                                                    color: #0b0f17;
+                                                    background-color: #00d4a8;
+                                                    border-width: 0px;
+                                                    border-radius: 9999px;
+                                                    padding: 12px 20px;
+                                                "
+                                                form="sib-form"
+                                                type="submit"
+                                            >
+                                                Get my invite
+                                            </button>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="email_address_check"
+                                            value=""
+                                            class="input--hidden"
+                                        />
+                                        <input
+                                            type="hidden"
+                                            name="locale"
+                                            value="en"
+                                        />
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                        <p class="mt-3 text-xs text-slate-400">
+                            We'll email you when TestFlight access is available.
+                            No spam, ever.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -671,11 +748,11 @@
                             "
                         >
                             <div
-                                id="sib-form-container"
+                                id="sib-form-container-bottom"
                                 class="sib-form-container"
                             >
                                 <div
-                                    id="error-message"
+                                    id="error-message-bottom"
                                     class="sib-form-message-panel"
                                     style="
                                         font-family: Helvetica, sans-serif;
@@ -709,7 +786,7 @@
                                 </div>
                                 <div></div>
                                 <div
-                                    id="success-message"
+                                    id="success-message-bottom"
                                     class="sib-form-message-panel"
                                     style="
                                         font-family: Helvetica, sans-serif;
@@ -744,7 +821,7 @@
                                 </div>
                                 <div></div>
                                 <div
-                                    id="sib-container"
+                                    id="sib-container-bottom"
                                     class="sib-container--large sib-container--vertical"
                                     style="
                                         max-width: 540px;
@@ -758,7 +835,7 @@
                                     "
                                 >
                                     <form
-                                        id="sib-form"
+                                        id="sib-form-bottom"
                                         method="POST"
                                         action="https://bdb5b4a4.sibforms.com/serve/MUIFAH9pN8ccmxoFXnMaeU1HgL_d32b27uP2QgLhSLHeAAZGN2qzFM6ew7fs1h7ex8P6vdohPJA69tGv-yDvZWRboV50iFqzImxhJ8RXEIGzWFqSOSEs7HM_ga9rM4IP4PbTdQTOVZ9nswxgir8bIAXx11716MCiPqKbWdknQhALfKxGjc_1ShHVj8JPxjz9AjUICzcwBLbOxvgu"
                                         data-type="subscription"
@@ -805,13 +882,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div style="padding: 8px 0">
+                                        <div class="sib-input sib-form-block">
                                             <div
-                                                class="sib-input sib-form-block"
+                                                class="form__entry entry_block"
                                             >
-                                                <div
-                                                    class="form__entry entry_block"
-                                                >
                                                     <div
                                                         class="form__label-row"
                                                     >
@@ -826,7 +900,7 @@
                                                                 font-size: 14px;
                                                                 color: #e2e8f0;
                                                             "
-                                                            for="EMAIL"
+                                                            for="EMAIL-bottom"
                                                             data-required="*"
                                                             >Email
                                                             address</label
@@ -837,7 +911,7 @@
                                                             <input
                                                                 class="input"
                                                                 type="text"
-                                                                id="EMAIL"
+                                                                id="EMAIL-bottom"
                                                                 name="EMAIL"
                                                                 autocomplete="off"
                                                                 value=""
@@ -884,7 +958,7 @@
                                                         border-radius: 9999px;
                                                         padding: 12px 20px;
                                                     "
-                                                    form="sib-form"
+                                                    form="sib-form-bottom"
                                                     type="submit"
                                                 >
                                                     <svg
@@ -961,7 +1035,7 @@
                         <p class="mt-3 text-sm text-slate-300">
                             We belive the battery impact is very limited, but
                             feel free to provide feedback on it, we're looking
-                            formard to improve in any way.
+                            forward to improve.
                         </p>
                     </details>
                     <details class="group py-5">
