@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f17"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="rgba(0,212,168,0.28)"/>
+      <stop offset="60%" stop-color="rgba(0,212,168,0)"/>
+    </radialGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1ecc9a"/>
+      <stop offset="100%" stop-color="#00d4a8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Logo mark -->
+  <g transform="translate(96,96)">
+    <rect width="72" height="72" rx="18" fill="#00d4a8"/>
+    <circle cx="36" cy="26" r="8" fill="#0b0f17"/>
+    <path d="M16 56c0-12 9-22 20-22s20 10 20 22" stroke="#0b0f17" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <text x="184" y="142" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700" fill="#e2e8f0">PostureMaxx</text>
+
+  <!-- Headline -->
+  <text x="96" y="320" font-family="Inter, system-ui, sans-serif" font-size="84" font-weight="800" fill="#ffffff">Better posture,</text>
+  <text x="96" y="412" font-family="Inter, system-ui, sans-serif" font-size="84" font-weight="800" fill="#1ecc9a">powered by your AirPods.</text>
+
+  <!-- Subhead -->
+  <text x="96" y="478" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">Real-time posture monitoring — discreet, on-device, and battery-friendly.</text>
+
+  <!-- CTA pill -->
+  <g transform="translate(96,520)">
+    <rect width="280" height="60" rx="30" fill="#00d4a8"/>
+    <text x="140" y="39" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#0b0f17">Join the TestFlight beta →</text>
+  </g>
+
+  <!-- Posture score badge (right side) -->
+  <g transform="translate(880,180)">
+    <circle cx="120" cy="120" r="110" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="14"/>
+    <circle cx="120" cy="120" r="110" fill="none" stroke="url(#brand)" stroke-width="14" stroke-linecap="round" stroke-dasharray="691" stroke-dashoffset="76" transform="rotate(-90 120 120)"/>
+    <text x="120" y="118" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="74" font-weight="800" fill="#ffffff">92</text>
+    <text x="120" y="160" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#94a3b8" letter-spacing="2">POSTURE SCORE</text>
+  </g>
+</svg>
