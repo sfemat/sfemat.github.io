@@ -18,28 +18,17 @@ The repo root should be served as a static site. On GitHub Pages:
 
 ## Wiring up the newsletter (Brevo / Sendinblue)
 
-The signup form uses Brevo's JS embed. In `index.html`, the loader script is in `<head>`:
-
-```html
-<script>
-  (function () {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = 'https://bdb5b4a4.sibforms.com/v2/sibforms.js';
-    document.head.appendChild(s);
-  })();
-</script>
-```
-
-The form markup (email field + Subscribe button) lives in the signup section and POSTs to Brevo's subscribe endpoint.
+The signup form is a Brevo JS embed. The form markup lives in `index.html` in the signup section, with form-specific CSS in the `<head>` and the validation script at the bottom of `<body>`.
 
 If you ever need to swap forms (different list, different workspace):
 
-1. In Brevo, create a new form.
-2. Update the `s.src` URL in the loader script to your new form's `sibforms.com` subdomain.
-3. Update the form `action` URL in the `<form>` tag to match.
-4. Commit and push.
+1. In Brevo, get the new form's full embed code (CSS + markup + validation script).
+2. Replace the corresponding sections in `index.html`:
+   - The `@font-face` rules, `.sib-form-message-panel` rules, and `#sib-container` rules in the `<style>` block in `<head>`
+   - The `<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">` tag
+   - The form markup inside the signup section
+   - The validation script + `<script defer src="...main.js">` at the bottom of `<body>`
+3. Commit and push.
 
 ## Customizing
 
